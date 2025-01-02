@@ -73,10 +73,29 @@ npm run build --workspace ./packages/ui
 npm publish --access public --scope=@paramlabs
 ```
 
+```json
+{
+      "type": "module",
+      "exports": {
+          ".": {
+              "import": "./dist/es/index.js",
+              "require": "./dist/cjs/index.js",
+              "types": "./dist/types/index.d.ts"  ✅
+          },
+          "module2" {
+              "import": "./dist/es/module2.js",
+              "require": "./dist/cjs/index.js",
+              "types": "./dist/types/module2.ts"  ✅
+          }
+      }
+}
+```
+
 ### Useful repos
 
 1. [Typescript • React • Package Starter](https://github.com/TimMikeladze/typescript-react-package-starter)
 2. [Component library setup with React, TypeScript and Rollup](https://dev.to/siddharthvenkatesh/component-library-setup-with-react-typescript-and-rollup-onj)
+3. [tsup multi entrypoint](https://gist.github.com/ixahmedxi/972ebb37c06f2f81513e1834a9457593)
 
 ### Useful articles
 
